@@ -47,19 +47,19 @@ export default function AddWord() {
 
   return (
     <div className="p-10 max-w-lg mx-auto">
-      <h1 className="text-2xl font-bold mb-6">เพิ่มคำศัพท์ใหม่</h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 placeholder:text-gray-500">เพิ่มคำศัพท์ใหม่</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input 
           type="text" 
           placeholder="คำศัพท์ (Word)" 
-          className="w-full border p-3 rounded-xl"
+          className="w-full border p-3 rounded-xl text-gray-900 placeholder:text-gray-500"
           value={word}
           onChange={(e) => setWord(e.target.value)}
           required
         />
         <textarea 
           placeholder="คำแปล (Definition)" 
-          className="w-full border p-3 rounded-xl"
+          className="w-full border p-3 rounded-xl text-gray-900 placeholder:text-gray-500"
           value={definition}
           onChange={(e) => setDef(e.target.value)}
           required

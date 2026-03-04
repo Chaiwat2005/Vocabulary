@@ -94,7 +94,7 @@ export default function MyBook() {
         </h1>
         <button 
           onClick={() => setFlippedIds(new Set())} 
-          className="text-sm bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-300 transition-all"
+          className="text-sm bg-gray-200 px-4 py-2 rounded-xl hover:bg-gray-300 transition-all text-gray-900 placeholder:text-gray-500"
         >
           ปิดการ์ดทั้งหมด
         </button>
@@ -102,8 +102,8 @@ export default function MyBook() {
 
       {/* ฟอร์มเพิ่มคำศัพท์ */}
       <form onSubmit={handleAddNew} className="mb-10 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col sm:flex-row gap-3">
-        <input className="flex-1 p-3 rounded-2xl border outline-none focus:ring-2 focus:ring-blue-400" placeholder="คำศัพท์ใหม่..." value={newWord.word} onChange={e => setNewWord({...newWord, word: e.target.value})} required />
-        <input className="flex-1 p-3 rounded-2xl border outline-none focus:ring-2 focus:ring-blue-400" placeholder="คำแปล..." value={newWord.def} onChange={e => setNewWord({...newWord, def: e.target.value})} required />
+        <input className="flex-1 p-3 rounded-2xl border outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 placeholder:text-gray-500" placeholder="คำศัพท์ใหม่..." value={newWord.word} onChange={e => setNewWord({...newWord, word: e.target.value})} required />
+        <input className="flex-1 p-3 rounded-2xl border outline-none focus:ring-2 focus:ring-blue-400 text-gray-900 placeholder:text-gray-500" placeholder="คำแปล..." value={newWord.def} onChange={e => setNewWord({...newWord, def: e.target.value})} required />
         <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-bold transition-all shadow-md">เพิ่มคำศัพท์</button>
       </form>
 
@@ -117,8 +117,8 @@ export default function MyBook() {
             <div key={item.id} className="relative group">
               {isEditing === item.id ? (
                 <div className="bg-white border-2 border-blue-400 rounded-3xl p-6 h-64 flex flex-col gap-3 justify-center shadow-lg">
-                  <input className="border p-2 rounded-xl outline-none" value={editValue.word} onChange={e => setEditValue({...editValue, word: e.target.value})} />
-                  <textarea className="border p-2 rounded-xl h-20 outline-none" value={editValue.def} onChange={e => setEditValue({...editValue, def: e.target.value})} />
+                  <input className="border p-2 rounded-xl outline-none text-gray-900 placeholder:text-gray-500" value={editValue.word} onChange={e => setEditValue({...editValue, word: e.target.value})} />
+                  <textarea className="border p-2 rounded-xl h-20 outline-none text-gray-900 placeholder:text-gray-500" value={editValue.def} onChange={e => setEditValue({...editValue, def: e.target.value})} />
                   <div className="flex gap-2">
                     <button onClick={() => handleUpdate(item.id)} className="flex-1 bg-green-500 text-white py-2 rounded-xl font-bold">บันทึก</button>
                     <button onClick={() => setIsEditing(null)} className="flex-1 bg-gray-100 text-gray-500 py-2 rounded-xl font-bold">ยกเลิก</button>

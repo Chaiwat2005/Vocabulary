@@ -110,7 +110,7 @@ export default function Home() {
         <p className="text-sm text-gray-500 mb-6 ml-4">Total: {vocabs.length} words</p>
         
         <div className="ml-4">
-          <input type="text" placeholder="ค้นหาคำศัพท์..." className="block w-full max-w-md p-3 mb-8 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+          <input type="text" placeholder="ค้นหาคำศัพท์..." className="block w-full max-w-md p-3 mb-8 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 shadow-sm text-gray-900 placeholder:text-gray-500"
             onChange={(e) => setSearchTerm(e.target.value)} />
 
           {/* Admin Add Form */}
@@ -118,8 +118,8 @@ export default function Home() {
             <div className="mb-10 bg-blue-50 p-6 rounded-3xl border border-blue-100 shadow-sm">
               <h2 className="text-lg font-bold text-blue-700 mb-4">⚡ Admin Quick Add</h2>
               <form onSubmit={handleAdminAdd} className="flex flex-col sm:flex-row gap-3">
-                <input className="flex-1 p-3 rounded-xl border-white outline-none" placeholder="คำศัพท์..." value={newVocab.word} onChange={e => setNewVocab({...newVocab, word: e.target.value})} required />
-                <input className="flex-1 p-3 rounded-xl border-white outline-none" placeholder="คำแปล..." value={newVocab.def} onChange={e => setNewVocab({...newVocab, def: e.target.value})} required />
+                <input className="flex-1 p-3 rounded-xl border-black outline-none text-gray-900 placeholder:text-gray-500" placeholder="คำศัพท์..." value={newVocab.word} onChange={e => setNewVocab({...newVocab, word: e.target.value})} required />
+                <input className="flex-1 p-3 rounded-xl border-black outline-none text-gray-900 placeholder:text-gray-500" placeholder="คำแปล..." value={newVocab.def} onChange={e => setNewVocab({...newVocab, def: e.target.value})} required />
                 <button className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all">Add</button>
               </form>
             </div>
@@ -127,7 +127,7 @@ export default function Home() {
 
           {/* Flashcards Grouped by A-Z */}
           {Object.keys(groupedVocabs).length === 0 ? (
-            <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-300">ไม่พบคำศัพท์</div>
+            <div className="text-center py-20 bg-white rounded-3xl border border-dashed border-gray-300 text-gray-900 placeholder:text-gray-500">ไม่พบคำศัพท์</div>
           ) : (
             alphabet.map((char) => groupedVocabs[char] && (
               <section key={char} id={`section-${char}`} className="mb-16 scroll-mt-24">
@@ -143,11 +143,11 @@ export default function Home() {
                     <div key={item.id} className="relative">
                       {isEditing === item.id ? (
                         <div className="bg-white border-2 border-blue-500 rounded-3xl p-6 h-64 flex flex-col gap-3 justify-center shadow-xl">
-                          <input className="border p-2 rounded-xl" value={editValue.word} onChange={e => setEditValue({...editValue, word: e.target.value})} />
-                          <textarea className="border p-2 rounded-xl h-20" value={editValue.def} onChange={e => setEditValue({...editValue, def: e.target.value})} />
+                          <input className="border p-2 rounded-xl text-gray-900 placeholder:text-gray-500" value={editValue.word} onChange={e => setEditValue({...editValue, word: e.target.value})} />
+                          <textarea className="border p-2 rounded-xl h-20 text-gray-900 placeholder:text-gray-500" value={editValue.def} onChange={e => setEditValue({...editValue, def: e.target.value})} />
                           <div className="flex gap-2">
-                            <button onClick={() => handleUpdate(item.id)} className="flex-1 bg-green-500 text-white py-2 rounded-xl font-bold">Save</button>
-                            <button onClick={() => setIsEditing(null)} className="flex-1 bg-gray-100 text-gray-400 py-2 rounded-xl font-bold">Cancel</button>
+                            <button onClick={() => handleUpdate(item.id)} className="flex-1 bg-green-500 text-white py-2 rounded-xl font-bold">ยืนยัน</button>
+                            <button onClick={() => setIsEditing(null)} className="flex-1 bg-gray-100 text-gray-400 py-2 rounded-xl font-bold">ยกเลิก</button>
                           </div>
                         </div>
                       ) : (

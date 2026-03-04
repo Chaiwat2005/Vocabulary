@@ -34,10 +34,10 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <form onSubmit={handleLogin} className="p-8 border rounded-lg shadow-md w-80">
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
-        <input type="email" placeholder="Email" className="border p-2 w-full mb-2" 
+        <h2 className="text-2xl font-bold mb-4 text-gray-900 placeholder:text-gray-500">Login</h2>
+        <input type="email" placeholder="Email" className="border p-2 w-full mb-2 text-gray-900 placeholder:text-gray-500" 
                onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Password" className="border p-2 w-full mb-4" 
+        <input type="password" placeholder="Password" className="border p-2 w-full mb-4 text-gray-900 placeholder:text-gray-500 " 
                onChange={(e) => setPassword(e.target.value)} />
         <button className="bg-blue-500 text-white w-full py-2 rounded">Sign In</button>
 
