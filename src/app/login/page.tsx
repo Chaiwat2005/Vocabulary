@@ -39,7 +39,7 @@ export default function LoginPage() {
                onChange={(e) => setEmail(e.target.value)} />
         <input type="password" placeholder="Password" className="border p-2 w-full mb-4 text-gray-900 placeholder:text-gray-500 " 
                onChange={(e) => setPassword(e.target.value)} />
-        <button className="bg-blue-500 text-white w-full py-2 rounded">Sign In</button>
+        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition duration-300 mt-4 disabled:bg-gray-400">Sign In</button>
 
         {/* 2. เพิ่มโค้ดส่วนนี้ลงไปใต้ปุ่มครับ */}
   <div className="mt-6 text-center">
