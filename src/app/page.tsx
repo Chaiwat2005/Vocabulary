@@ -106,8 +106,8 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex-1 min-w-0 pr-4">
-        <h1 className="text-4xl font-black text-gray-800 mb-2 ml-4">Global Library</h1>
-        <p className="text-sm text-gray-500 mb-6 ml-4">Total: {vocabs.length} words</p>
+        <h1 className="text-4xl font-black text-gray-800 mb-2 ml-4">คลังคำศัพท์ทั้งหมด</h1>
+        <p className="text-sm text-gray-500 mb-6 ml-4">คำทั้งหมด: {vocabs.length} คำ</p>
         
         <div className="ml-4">
           <input type="text" placeholder="ค้นหาคำศัพท์..." className="block w-full max-w-md p-3 mb-8 border border-gray-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500 shadow-sm text-gray-900 placeholder:text-gray-500"
@@ -116,11 +116,11 @@ export default function Home() {
           {/* Admin Add Form */}
           {role === 'admin' && (
             <div className="mb-10 bg-blue-50 p-6 rounded-3xl border border-blue-100 shadow-sm">
-              <h2 className="text-lg font-bold text-blue-700 mb-4">⚡ Admin Quick Add</h2>
+              <h2 className="text-lg font-bold text-blue-700 mb-4">⚡ แอดมินเพิ่มเร็วทันใจ</h2>
               <form onSubmit={handleAdminAdd} className="flex flex-col sm:flex-row gap-3">
                 <input className="flex-1 p-3 rounded-xl border-black outline-none text-gray-900 placeholder:text-gray-500" placeholder="คำศัพท์..." value={newVocab.word} onChange={e => setNewVocab({...newVocab, word: e.target.value})} required />
                 <input className="flex-1 p-3 rounded-xl border-black outline-none text-gray-900 placeholder:text-gray-500" placeholder="คำแปล..." value={newVocab.def} onChange={e => setNewVocab({...newVocab, def: e.target.value})} required />
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all">Add</button>
+                <button className="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all">เพิ่ม</button>
               </form>
             </div>
           )}
@@ -162,7 +162,7 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="mt-4 flex justify-between items-center px-2">
-                            <button onClick={() => addToMyBook(item.id)} className="text-xs font-bold text-orange-500 bg-orange-50 px-3 py-1.5 rounded-lg hover:bg-orange-100 transition-colors">⭐ Add My Book</button>
+                            <button onClick={() => addToMyBook(item.id)} className="text-xs font-bold text-orange-500 bg-orange-50 px-3 py-1.5 rounded-lg hover:bg-orange-100 transition-colors">⭐ เพิ่มคำในคลังส่วนตัว</button>
                             {role === 'admin' && (
                               <div className="flex gap-3 text-lg cursor-pointer">
                                 <span onClick={() => { setIsEditing(item.id); setEditValue({ word: item.word, def: item.definition }); }}>✏️</span>

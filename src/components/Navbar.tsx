@@ -61,8 +61,8 @@ export default function Navbar() {
         
         {user && (
           <div className="hidden md:flex gap-6 ml-4 text-sm font-medium text-gray-500">
-            <Link href="/" className={`hover:text-blue-600 ${pathname === '/' ? 'text-blue-600 font-bold' : ''}`}>Library</Link>
-            <Link href="/my-book" className={`hover:text-blue-600 ${pathname === '/my-book' ? 'text-blue-600 font-bold' : ''}`}>My Book</Link>
+            <Link href="/" className={`hover:text-blue-600 ${pathname === '/' ? 'text-blue-600 font-bold' : ''}`}>คลังคำศัพท์ทั้งหมด</Link>
+            <Link href="/my-book" className={`hover:text-blue-600 ${pathname === '/my-book' ? 'text-blue-600 font-bold' : ''}`}>คำศัพท์ในคลังส่วนตัว</Link>
             {role === 'admin' && (
               <Link href="/admin-dashboard" className="text-red-500 hover:text-red-700 font-bold underline decoration-dotted">Admin Panel</Link>
             )}

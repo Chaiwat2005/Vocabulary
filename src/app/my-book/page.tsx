@@ -90,7 +90,7 @@ export default function MyBook() {
     <div className="p-8 max-w-6xl mx-auto bg-gray-50 min-h-screen">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-4xl font-black text-gray-800 flex items-center gap-2">
-          ⭐ My Book
+          ⭐ คำศัพท์ในคลังส่วนตัว
         </h1>
         <button 
           onClick={() => setFlippedIds(new Set())} 

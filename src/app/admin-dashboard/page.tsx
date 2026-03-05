@@ -74,13 +74,13 @@ export default function AdminDashboard() {
                   onClick={() => handleApprove(item.id)}
                   className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl text-sm font-bold"
                 >
-                  Approve
+                  อนุมัติ
                 </button>
                 <button 
                   onClick={() => handleDelete(item.id)}
                   className="bg-red-100 hover:bg-red-200 text-red-600 px-4 py-2 rounded-xl text-sm font-bold"
                 >
-                  Delete
+                  ปฏิเสธ
                 </button>
               </div>
             </div>
