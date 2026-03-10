@@ -78,9 +78,7 @@ export default function Navbar() {
               {user.email}
             </span>
 
-            <Link href="/add" className="hidden sm:block bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-xl text-sm font-bold shadow-sm transition-all">
-              + Suggest
-            </Link>
+            
             <button 
               onClick={handleLogout}
               className="text-xs font-bold text-gray-400 hover:text-red-500 transition-colors"
